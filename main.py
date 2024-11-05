@@ -14,3 +14,8 @@ def root():
 @app.get("/{name}")
 def root(name: str):
     return JSONResponse(content={"Hello": name})
+
+@app.get("/index")
+def root():
+    url = "index.html"
+    return JSONResponse(content={url})

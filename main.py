@@ -3,12 +3,14 @@ from fastapi.responses import JSONResponse
 
 app = FastAPI()
 
-
-@app.get("/{name}")  # ルーティングの設定
-
+@app.get("/")  # ルーティングの設定
 def root():
     return {"":""}
+
+@app.get("/{hello}")
 def root():
-    return {"hellow":"world"}
+    return {"hello":"world"}
+
+@app.get("/{name}")
 def root(name: str):
     return JSONResponse(content={"Hello": name})

@@ -11,11 +11,12 @@ def root():
 def root():
     return {"hello":"world"}
 
-@app.get("/{name}")
-def root(name: str):
-    return {"Hello": name}
-
 @app.get("/index")
 def root():
     url = os.path.join("git-Training-materials", "index.html")
     return FileResponse(url)
+
+@app.get("/{name}")
+def root(name: str):
+    return {"Hello": name}
+

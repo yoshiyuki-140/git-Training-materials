@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from fastapi.responses import JSONResponse
-
+from fastapi.responses import FileResponse
+import os
 app = FastAPI()
 
 @app.get("/")  # ルーティングの設定
@@ -13,9 +13,9 @@ def root():
 
 @app.get("/{name}")
 def root(name: str):
-    return JSONResponse(content={"Hello": name})
+    return {"Hello": name}
 
 @app.get("/index")
 def root():
-    url = "index.html"
-    return JSONResponse(content={url})
+    url = os.path.join("static", "index.html")
+    return FileResponse(url)

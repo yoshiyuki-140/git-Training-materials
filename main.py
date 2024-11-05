@@ -17,5 +17,5 @@ def root(name: str):
 
 @app.get("/index")
 def root():
-    url = os.path.join("static", "index.html")
+    url = os.path.join("git-Training-materials", "index.html")
     return FileResponse(url)

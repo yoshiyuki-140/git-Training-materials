@@ -5,7 +5,7 @@
 
 #@app.get("/")  # ルーティングの設定
 #def root():
-    return {"":""}
+    #return {"":""}
 
 #@app.get("/hello")
 #def root():

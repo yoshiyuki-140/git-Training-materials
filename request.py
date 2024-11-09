@@ -3,8 +3,10 @@ import json
 
 # JSONファイルからイベント情報を読み込む関数
 def load_event_data(file_name):
-    with open(file_name, "r") as file:
+    with open(file_name, 'r', encoding='utf-8') as file:
         return json.load(file)
+
+
 
 # 各JSONファイルからイベント情報を読み込み、リクエストを送信する
 for file_name in ["event1.json", "event2.json"]:
@@ -17,3 +19,6 @@ for file_name in ["event1.json", "event2.json"]:
     # レスポンスの確認
     print(response.status_code)
     print(response.json())
+    print("Starting script...")
+
+# その後に実行するコードを続けます

@@ -19,6 +19,4 @@ for file_name in ["event1.json", "event2.json"]:
     # レスポンスの確認
     print(response.status_code)
     print(response.json())
-    print("Starting script...")
 
-# その後に実行するコードを続けます

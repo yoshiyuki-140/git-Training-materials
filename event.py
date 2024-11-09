@@ -2,7 +2,7 @@ from pydantic import BaseModel
 from datetime import datetime
 
 
-# イベントを定義
+# イベントを定義フォーマット
 class Event(BaseModel):
     id: int             
     title: str          #タイトル

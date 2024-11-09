@@ -34,4 +34,4 @@ def get_event(event_id: int):
         if event.id == event_id:
             return event
     raise HTTPException(status_code=404, detail="イベントはありませんでした")#当てはまらない場合は
-#FastAPIの”HTTPException“を使用して、HTTPエラーとして404を返す設定
+#FastAPIの”HTTPException“を使用して、HTTPエラーとして404を返す

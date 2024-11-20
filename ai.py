@@ -6,18 +6,13 @@ from fastapi.responses import FileResponse
 import os
 app = FastAPI()
 
-@app.get("/GPT")  # ルーティングの設定
+@app.get("/GPT") 
 def training():
-
-    completion = client.chat.completions.create(
-    model="gpt-4o-mini",
-    messages=[
-        {"role": "system", "content": "You are a helpful assistant."},
-        {
-            "role": "user",
-            "content": "おすすめの筋トレは？"
-        }
-    ]
+    completion = OpenAI.ChatCompletion.create(
+        model="gpt-4",
+        messages=[
+            {"role": "system", "content": "You are a helpful assistant."},
+            {"role": "user", "content": "おすすめの筋トレは？"}
+        ]
     )
-
-    return {completion.choices[0].message}
+    return {"response": completion.choices[0].message.get("content")}
